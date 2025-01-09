@@ -9,13 +9,14 @@
 
 spring:
   datasource:
-    url: jdbc:h2:tcp://localhost/~/jpashop
-    username: sa
-    password:
-    driver-class-name: org.h2.Driver
+    url: jdbc:postgresql://localhost:5432/jpashop
+    username: postgres
+    password: ming
+    driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: none
+      database: postgresql
     properties:
       hibernate:
         show_sql: true
