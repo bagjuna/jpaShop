@@ -35,8 +35,9 @@ public class OrderRepository {
     }
 
     public List<Order> findAll(OrderSearch orderSearch) {
-        return queryFactory.selectFrom(order)
+        return queryFactory.select(order)
                 .join(member)
+                .from(order)
                 .where(statusEq(orderSearch.getOrderStatus()),
                         nameContain(orderSearch.getMemberName()))
                 .fetch();
